@@ -4,6 +4,9 @@ from tkinter import Tk, Button, colorchooser
 import threading
 import os
 
+# Set the DISPLAY environment variable for the Raspberry Pi touchscreen
+os.environ['DISPLAY'] = ':0'
+
 # Function to discover Kasa devices on the network
 async def discover_devices():
     devices = await Discover.discover()
@@ -107,4 +110,3 @@ if __name__ == "__main__":
 
 # Note: This code won't run correctly in the PCI due to missing hardware and GUI capabilities, but it's written to work on a Raspberry Pi setup.
 # Also, the rgb_to_hsv function needs proper implementation based on the specific requirements of the Kasa bulb.
-
